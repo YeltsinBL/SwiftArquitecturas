@@ -59,13 +59,19 @@ class CharacterListCellView: UITableViewCell {
             characterName.topAnchor.constraint(equalTo: characterImageView.topAnchor),
             
             characterStatus.leadingAnchor.constraint(equalTo: characterName.leadingAnchor),
-            characterStatus.topAnchor.constraint(equalTo: characterName.topAnchor, constant: 8),
+            characterStatus.topAnchor.constraint(equalTo: characterName.bottomAnchor, constant: 8),
             
             characterSpecie.leadingAnchor.constraint(equalTo: characterName.leadingAnchor),
             characterSpecie.topAnchor.constraint(equalTo: characterStatus.bottomAnchor, constant: 8),
             
         ])
         
+    }
+//    pasamos el modelos para setearlo con las propiedades de los personajes
+    func configure(_ model: CharacterModel) {
+        self.characterName.text = model.name
+        self.characterSpecie.text = model.species
+        self.characterStatus.text = model.status
     }
     
 }
