@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Kingfisher
 
 class CharacterListCellView: UITableViewCell {
     
@@ -72,6 +73,7 @@ class CharacterListCellView: UITableViewCell {
         self.characterName.text = model.name
         self.characterSpecie.text = model.species
         self.characterStatus.text = model.status
+        self.characterImageView.kf.setImage(with: URL(string: model.image))
     }
     
 }
