@@ -32,6 +32,18 @@ class CharactersListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        obtenemos el index de la celda pulsada
+        tableViewDelegate?.didTapOnCell = { [weak self] index in
+//            presentar la nueva subvista
+            guard let dataSource = self?.tableViewDataSource else { return }
+//            obtenemos el modelo a partir del Array del DataSource
+            let characterModel = dataSource.characters[index]
+//            inicializamos la vista del detalle con el modelo
+            let characterDetailViewController = CharacterDetailViewController(characterDetailModel: characterModel)
+//            esta responsabilidad de hacer la navegación al detalle, se debe de hacer en otra clase, para ello se usa los 'Coordinators'
+            self?.present(characterDetailViewController, animated: true)
+        }
+        
 //        Cuando la vista se haya cargado, hacemos la petición HTTP
         Task {
             let characters = await apiClient.getListOfCharacter()
