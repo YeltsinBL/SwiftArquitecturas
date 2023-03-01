@@ -8,5 +8,5 @@
 import Foundation
 
 struct CharacterModelResponse: Decodable {
-    let result: [CharacterModel]
+    let results: [CharacterModel]
 }
