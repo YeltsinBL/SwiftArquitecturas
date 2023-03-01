@@ -14,14 +14,19 @@ class CharactersListViewController: UIViewController {
     var apiClient = ListOfCharacterAPIClient()
     
     private var tableViewDataSource: ListOfCharactersTableViewDataSource?
+    private var tableViewDelegate: ListOfCharactersTableViewDelegate?
 
     override func loadView() {
 //        Creamos la instancia
         view = CharacterListView()
+//        instanciamos
+        tableViewDelegate = ListOfCharactersTableViewDelegate()
+        
 //        instanciamos y pasamos la TableView que necesita el DataSource
         tableViewDataSource = ListOfCharactersTableViewDataSource(tableView: mainView.charatersTableView)
 //        indicamos que el DataSource de la vista es la instancia creada
         mainView.charatersTableView.dataSource = tableViewDataSource
+        mainView.charatersTableView.delegate = tableViewDelegate
     }
     
     override func viewDidLoad() {

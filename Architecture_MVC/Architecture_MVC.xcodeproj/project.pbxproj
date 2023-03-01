@@ -20,6 +20,7 @@
 		3B5F123F29AFB8D3005B322B /* CharacterListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5F123E29AFB8D3005B322B /* CharacterListCellView.swift */; };
 		3B5F124129AFC753005B322B /* ListOfCharactersTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5F124029AFC753005B322B /* ListOfCharactersTableViewDataSource.swift */; };
 		3B5F124429AFCEF6005B322B /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 3B5F124329AFCEF6005B322B /* Kingfisher */; };
+		3B5F124629AFCFEA005B322B /* ListOfCharactersTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5F124529AFCFEA005B322B /* ListOfCharactersTableViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		3B5F123C29AFB788005B322B /* CharacterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListView.swift; sourceTree = "<group>"; };
 		3B5F123E29AFB8D3005B322B /* CharacterListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListCellView.swift; sourceTree = "<group>"; };
 		3B5F124029AFC753005B322B /* ListOfCharactersTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfCharactersTableViewDataSource.swift; sourceTree = "<group>"; };
+		3B5F124529AFCFEA005B322B /* ListOfCharactersTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfCharactersTableViewDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 			children = (
 				3B5F121E29AFAB71005B322B /* CharactersListViewController.swift */,
 				3B5F124029AFC753005B322B /* ListOfCharactersTableViewDataSource.swift */,
+				3B5F124529AFCFEA005B322B /* ListOfCharactersTableViewDelegate.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				3B5F121F29AFAB71005B322B /* CharactersListViewController.swift in Sources */,
 				3B5F123F29AFB8D3005B322B /* CharacterListCellView.swift in Sources */,
 				3B5F123D29AFB788005B322B /* CharacterListView.swift in Sources */,
+				3B5F124629AFCFEA005B322B /* ListOfCharactersTableViewDelegate.swift in Sources */,
 				3B5F121B29AFAB71005B322B /* AppDelegate.swift in Sources */,
 				3B5F123B29AFB4AB005B322B /* CharacterModel.swift in Sources */,
 				3B5F121D29AFAB71005B322B /* SceneDelegate.swift in Sources */,
