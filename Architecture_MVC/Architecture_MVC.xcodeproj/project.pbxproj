@@ -21,6 +21,8 @@
 		3B5F124129AFC753005B322B /* ListOfCharactersTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5F124029AFC753005B322B /* ListOfCharactersTableViewDataSource.swift */; };
 		3B5F124429AFCEF6005B322B /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 3B5F124329AFCEF6005B322B /* Kingfisher */; };
 		3B5F124629AFCFEA005B322B /* ListOfCharactersTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5F124529AFCFEA005B322B /* ListOfCharactersTableViewDelegate.swift */; };
+		3B5F124829AFD28D005B322B /* CharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5F124729AFD28D005B322B /* CharacterDetailView.swift */; };
+		3B5F124A29AFD379005B322B /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5F124929AFD379005B322B /* CharacterDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		3B5F123E29AFB8D3005B322B /* CharacterListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListCellView.swift; sourceTree = "<group>"; };
 		3B5F124029AFC753005B322B /* ListOfCharactersTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfCharactersTableViewDataSource.swift; sourceTree = "<group>"; };
 		3B5F124529AFCFEA005B322B /* ListOfCharactersTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfCharactersTableViewDelegate.swift; sourceTree = "<group>"; };
+		3B5F124729AFD28D005B322B /* CharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailView.swift; sourceTree = "<group>"; };
+		3B5F124929AFD379005B322B /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +140,7 @@
 		3B5F123329AFB1D6005B322B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				3B5F124929AFD379005B322B /* CharacterDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -143,6 +148,7 @@
 		3B5F123429AFB1DE005B322B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3B5F124729AFD28D005B322B /* CharacterDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -232,6 +238,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B5F124129AFC753005B322B /* ListOfCharactersTableViewDataSource.swift in Sources */,
+				3B5F124A29AFD379005B322B /* CharacterDetailViewController.swift in Sources */,
+				3B5F124829AFD28D005B322B /* CharacterDetailView.swift in Sources */,
 				3B5F123929AFB480005B322B /* CharacterModelResponse.swift in Sources */,
 				3B5F121F29AFAB71005B322B /* CharactersListViewController.swift in Sources */,
 				3B5F123F29AFB8D3005B322B /* CharacterListCellView.swift in Sources */,
