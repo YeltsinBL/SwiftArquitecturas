@@ -16,6 +16,8 @@ class CharactersListViewController: UIViewController {
     private var tableViewDataSource: ListOfCharactersTableViewDataSource?
     private var tableViewDelegate: ListOfCharactersTableViewDelegate?
 
+    var characterDetailCoordinator: CharacterDetailPushCoordinator? // referencial al coordinator
+    
     override func loadView() {
 //        Creamos la instancia
         view = CharacterListView()
@@ -36,12 +38,18 @@ class CharactersListViewController: UIViewController {
         tableViewDelegate?.didTapOnCell = { [weak self] index in
 //            presentar la nueva subvista
             guard let dataSource = self?.tableViewDataSource else { return }
+            
 //            obtenemos el modelo a partir del Array del DataSource
             let characterModel = dataSource.characters[index]
+            /**
 //            inicializamos la vista del detalle con el modelo
             let characterDetailViewController = CharacterDetailViewController(characterDetailModel: characterModel)
 //            esta responsabilidad de hacer la navegación al detalle, se debe de hacer en otra clase, para ello se usa los 'Coordinators'
             self?.present(characterDetailViewController, animated: true)
+            **/
+//            creamos la instancia del Coordinator
+            self?.characterDetailCoordinator = CharacterDetailPushCoordinator(navigationController: self?.navigationController, characterModel: characterModel)
+            self?.characterDetailCoordinator?.start() // hacemos la navegación
         }
         
 //        Cuando la vista se haya cargado, hacemos la petición HTTP

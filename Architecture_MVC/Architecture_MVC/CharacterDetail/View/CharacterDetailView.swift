@@ -54,7 +54,7 @@ class CharacterDetailView: UIView {
         
         NSLayoutConstraint.activate([
             characterImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
-            characterImageView.topAnchor.constraint(equalTo: topAnchor, constant: 12),
+            characterImageView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor, constant: 12),
             characterImageView.heightAnchor.constraint(equalToConstant: 200),
             characterImageView.widthAnchor.constraint(equalToConstant: 200),
             

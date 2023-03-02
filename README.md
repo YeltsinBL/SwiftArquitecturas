@@ -39,3 +39,7 @@ Contendra 3 Coordinators para hacer las navegaciones:
 - El `MainCoordinator` se llamará al lanzar la aplicación y mostrará el listado principal.
 -- Tenemos que poner el identificador que se a creado en el 'Main.storyboard'
 -- Agregamos el Coordinator en el 'SceneDelegate' para que pueda funcionar.
+- El `PushCoordinator` mostrará en forma de navegación el detalle de la información.
+-- Lo inicializamos para que reciba el NavigationController y el Modelo, y lo pasamos al su método para que lo cargue.
+-- Llamamos al método que carga la vista del detalle en el Viewcontroller.
+

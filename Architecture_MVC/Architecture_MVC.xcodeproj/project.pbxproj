@@ -25,6 +25,7 @@
 		3B5F124A29AFD379005B322B /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5F124929AFD379005B322B /* CharacterDetailViewController.swift */; };
 		3BA5C85D29B0310C00714A6A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA5C85C29B0310C00714A6A /* Coordinator.swift */; };
 		3BA5C85F29B0327A00714A6A /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA5C85E29B0327A00714A6A /* MainCoordinator.swift */; };
+		3BA5C86129B03C1F00714A6A /* CharacterDetailPushCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA5C86029B03C1F00714A6A /* CharacterDetailPushCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		3B5F124929AFD379005B322B /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
 		3BA5C85C29B0310C00714A6A /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		3BA5C85E29B0327A00714A6A /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		3BA5C86029B03C1F00714A6A /* CharacterDetailPushCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailPushCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 			children = (
 				3BA5C85C29B0310C00714A6A /* Coordinator.swift */,
 				3BA5C85E29B0327A00714A6A /* MainCoordinator.swift */,
+				3BA5C86029B03C1F00714A6A /* CharacterDetailPushCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				3B5F123B29AFB4AB005B322B /* CharacterModel.swift in Sources */,
 				3B5F121D29AFAB71005B322B /* SceneDelegate.swift in Sources */,
 				3B5F123729AFB3D8005B322B /* APIClient.swift in Sources */,
+				3BA5C86129B03C1F00714A6A /* CharacterDetailPushCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
