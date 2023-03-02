@@ -26,6 +26,7 @@
 		3BA5C85D29B0310C00714A6A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA5C85C29B0310C00714A6A /* Coordinator.swift */; };
 		3BA5C85F29B0327A00714A6A /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA5C85E29B0327A00714A6A /* MainCoordinator.swift */; };
 		3BA5C86129B03C1F00714A6A /* CharacterDetailPushCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA5C86029B03C1F00714A6A /* CharacterDetailPushCoordinator.swift */; };
+		3BA5C86329B0404400714A6A /* CharacterDetailModalCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA5C86229B0404400714A6A /* CharacterDetailModalCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		3BA5C85C29B0310C00714A6A /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		3BA5C85E29B0327A00714A6A /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		3BA5C86029B03C1F00714A6A /* CharacterDetailPushCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailPushCoordinator.swift; sourceTree = "<group>"; };
+		3BA5C86229B0404400714A6A /* CharacterDetailModalCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailModalCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 				3BA5C85C29B0310C00714A6A /* Coordinator.swift */,
 				3BA5C85E29B0327A00714A6A /* MainCoordinator.swift */,
 				3BA5C86029B03C1F00714A6A /* CharacterDetailPushCoordinator.swift */,
+				3BA5C86229B0404400714A6A /* CharacterDetailModalCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B5F124129AFC753005B322B /* ListOfCharactersTableViewDataSource.swift in Sources */,
+				3BA5C86329B0404400714A6A /* CharacterDetailModalCoordinator.swift in Sources */,
 				3BA5C85F29B0327A00714A6A /* MainCoordinator.swift in Sources */,
 				3B5F124A29AFD379005B322B /* CharacterDetailViewController.swift in Sources */,
 				3BA5C85D29B0310C00714A6A /* Coordinator.swift in Sources */,

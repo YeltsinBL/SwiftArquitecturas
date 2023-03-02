@@ -16,7 +16,8 @@ class CharactersListViewController: UIViewController {
     private var tableViewDataSource: ListOfCharactersTableViewDataSource?
     private var tableViewDelegate: ListOfCharactersTableViewDelegate?
 
-    var characterDetailCoordinator: CharacterDetailPushCoordinator? // referencial al coordinator
+    var characterDetailPushCoordinator: CharacterDetailPushCoordinator? // referencial al coordinator
+    var characterDetailModalCoordinator: CharacterDetailModalCoordinator?
     
     override func loadView() {
 //        Creamos la instancia
@@ -48,8 +49,10 @@ class CharactersListViewController: UIViewController {
             self?.present(characterDetailViewController, animated: true)
             **/
 //            creamos la instancia del Coordinator
-            self?.characterDetailCoordinator = CharacterDetailPushCoordinator(navigationController: self?.navigationController, characterModel: characterModel)
-            self?.characterDetailCoordinator?.start() // hacemos la navegación
+//            self?.characterDetailPushCoordinator = CharacterDetailPushCoordinator(navigationController: self?.navigationController, characterModel: characterModel)
+//            self?.characterDetailPushCoordinator?.start() // hacemos la navegación
+            self?.characterDetailModalCoordinator = CharacterDetailModalCoordinator(viewController: self, characterModel: characterModel)
+            self?.characterDetailModalCoordinator?.start() // hacemos la navegación
         }
         
 //        Cuando la vista se haya cargado, hacemos la petición HTTP

@@ -42,4 +42,6 @@ Contendra 3 Coordinators para hacer las navegaciones:
 - El `PushCoordinator` mostrará en forma de navegación el detalle de la información.
 -- Lo inicializamos para que reciba el NavigationController y el Modelo, y lo pasamos al su método para que lo cargue.
 -- Llamamos al método que carga la vista del detalle en el Viewcontroller.
+- El `ModalCoordinator` mostrará en forma modal 'sheet' el detalle de la información.
+-- La diferencia con el 'Push' es que en vez de enviar un 'Navigation' se envia un 'View' y lo mostramos con el '.present'.
 
