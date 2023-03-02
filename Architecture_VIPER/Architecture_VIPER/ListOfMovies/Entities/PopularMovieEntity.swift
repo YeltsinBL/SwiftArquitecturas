@@ -17,6 +17,6 @@ struct PopularMovieEntity : Decodable {
     enum CodingKeys: String, CodingKey {
         case id, title, overview
         case imageURL = "poster_path"
-        case votes
+        case votes = "vote_average"
     }
 }
