@@ -19,7 +19,7 @@
 		3B57A0E329B1305800A8EFD2 /* ListOfMoviesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B57A0E229B1305800A8EFD2 /* ListOfMoviesRouter.swift */; };
 		3B57A0E629B1324700A8EFD2 /* PopularMovieEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B57A0E529B1324700A8EFD2 /* PopularMovieEntity.swift */; };
 		3B57A0E829B1346500A8EFD2 /* PopularMovieResponseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B57A0E729B1346500A8EFD2 /* PopularMovieResponseEntity.swift */; };
-		3B57A0EA29B136A800A8EFD2 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B57A0E929B136A800A8EFD2 /* Keys.plist */; };
+		3B57A0EC29B144BB00A8EFD2 /* ApiKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B57A0EB29B144BB00A8EFD2 /* ApiKeys.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +37,7 @@
 		3B57A0E229B1305800A8EFD2 /* ListOfMoviesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfMoviesRouter.swift; sourceTree = "<group>"; };
 		3B57A0E529B1324700A8EFD2 /* PopularMovieEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMovieEntity.swift; sourceTree = "<group>"; };
 		3B57A0E729B1346500A8EFD2 /* PopularMovieResponseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMovieResponseEntity.swift; sourceTree = "<group>"; };
-		3B57A0E929B136A800A8EFD2 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
+		3B57A0EB29B144BB00A8EFD2 /* ApiKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ApiKeys.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +78,7 @@
 				3B57A0D029B12F4200A8EFD2 /* Assets.xcassets */,
 				3B57A0D229B12F4200A8EFD2 /* LaunchScreen.storyboard */,
 				3B57A0D529B12F4200A8EFD2 /* Info.plist */,
-				3B57A0E929B136A800A8EFD2 /* Keys.plist */,
+				3B57A0EB29B144BB00A8EFD2 /* ApiKeys.plist */,
 			);
 			path = Architecture_VIPER;
 			sourceTree = "<group>";
@@ -162,10 +162,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B57A0EA29B136A800A8EFD2 /* Keys.plist in Resources */,
 				3B57A0D429B12F4200A8EFD2 /* LaunchScreen.storyboard in Resources */,
 				3B57A0D129B12F4200A8EFD2 /* Assets.xcassets in Resources */,
 				3B57A0CF29B12F4000A8EFD2 /* Main.storyboard in Resources */,
+				3B57A0EC29B144BB00A8EFD2 /* ApiKeys.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

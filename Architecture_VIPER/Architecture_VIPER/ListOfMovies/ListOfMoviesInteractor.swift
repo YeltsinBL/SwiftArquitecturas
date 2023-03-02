@@ -11,7 +11,7 @@ class ListOfMoviesInteractor {
     
     func valueForAPIKey(named keyname:String) -> String {
         // 1
-        guard let filePath = Bundle.main.path(forResource: "Keys", ofType: "plist") else {
+        guard let filePath = Bundle.main.path(forResource: "ApiKeys", ofType: "plist") else {
             fatalError("No se pudo encontrar el archivo 'keys.plist'.")
         }
         // 2
