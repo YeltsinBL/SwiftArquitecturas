@@ -18,7 +18,9 @@ class ListOfMoviesPresenter {
     
 //    referencia del Interactor
     private let listOfMoviesIteractor: ListOfMoviesInteractor
-
+//    guardamos la referencia del array del Json
+    var models: [PopularMovieEntity] = []
+    
     init(listOfMoviesIteractor: ListOfMoviesInteractor) {
         self.listOfMoviesIteractor = listOfMoviesIteractor
     }
@@ -27,9 +29,9 @@ class ListOfMoviesPresenter {
     func onViewAppear(){
         Task {
 //            obtenemos los datos
-            let models = await listOfMoviesIteractor.getListOfMovies()
+            models = await listOfMoviesIteractor.getListOfMovies().results
 //            lo pasamos a View mediante un protocolo
-            ui?.update(movies: models.results)
+            ui?.update(movies: models)
         }
     }
     

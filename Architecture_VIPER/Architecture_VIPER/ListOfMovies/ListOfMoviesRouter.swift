@@ -9,9 +9,9 @@ import Foundation
 import UIKit
 
 class ListOfMoviesRouter {
-//    llamamos a este metodo desde el punto de entrada de la aplicacion 'SceneDelegate'
+//    llamamos a este método desde el punto de entrada de la aplicación 'SceneDelegate'
     func showListOfMovies(window: UIWindow?) {
-/*        presentamos el primero modulo de VIPER sin el storyboard */
+/*        presentamos el primero módulo de VIPER sin el storyboard */
 //        instanciamos la View
         let view = ListOfMoviesView()
         
