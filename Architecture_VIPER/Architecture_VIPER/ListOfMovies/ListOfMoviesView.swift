@@ -57,13 +57,13 @@ class ListOfMoviesView: UIViewController {
 
 extension ListOfMoviesView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        presenter!.models.count
+        presenter!.moviewCelViewModels.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCellView", for: indexPath) as! MovieCellView
         
-        let model = presenter!.models[indexPath.row]
+        let model = presenter!.moviewCelViewModels[indexPath.row]
         cell.configure(model: model)
         return cell
         
@@ -75,7 +75,7 @@ extension ListOfMoviesView: UITableViewDataSource {
 //conformar el protocolo del Presenter
 extension ListOfMoviesView: ListOfMoviesUI {
 //    pasamos los datos a la View
-    func update(movies: [PopularMovieEntity]) {
+    func update(movies: [MovieCellViewModel]) {
         print("Datos Recibidos \(movies)")
         DispatchQueue.main.async {
             self.moviesTableView.reloadData()

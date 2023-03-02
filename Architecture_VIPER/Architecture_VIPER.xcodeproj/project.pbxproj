@@ -21,6 +21,7 @@
 		3B57A0EC29B144BB00A8EFD2 /* ApiKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B57A0EB29B144BB00A8EFD2 /* ApiKeys.plist */; };
 		3B57A0EE29B15F4A00A8EFD2 /* MovieCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B57A0ED29B15F4A00A8EFD2 /* MovieCellView.swift */; };
 		3B57A0F129B163B300A8EFD2 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 3B57A0F029B163B300A8EFD2 /* Kingfisher */; };
+		3B57A0F429B169EF00A8EFD2 /* MovieCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B57A0F329B169EF00A8EFD2 /* MovieCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		3B57A0E729B1346500A8EFD2 /* PopularMovieResponseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMovieResponseEntity.swift; sourceTree = "<group>"; };
 		3B57A0EB29B144BB00A8EFD2 /* ApiKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ApiKeys.plist; sourceTree = "<group>"; };
 		3B57A0ED29B15F4A00A8EFD2 /* MovieCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCellView.swift; sourceTree = "<group>"; };
+		3B57A0F329B169EF00A8EFD2 /* MovieCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				3B57A0DC29B1302E00A8EFD2 /* ListOfMoviesView.swift */,
+				3B57A0F229B169DC00A8EFD2 /* ViewModel */,
 				3B57A0ED29B15F4A00A8EFD2 /* MovieCellView.swift */,
 				3B57A0DE29B1303A00A8EFD2 /* ListOfMoviesPresenter.swift */,
 				3B57A0E029B1304800A8EFD2 /* ListOfMoviesInteractor.swift */,
@@ -104,6 +107,14 @@
 				3B57A0E729B1346500A8EFD2 /* PopularMovieResponseEntity.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		3B57A0F229B169DC00A8EFD2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3B57A0F329B169EF00A8EFD2 /* MovieCellViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +194,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B57A0F429B169EF00A8EFD2 /* MovieCellViewModel.swift in Sources */,
 				3B57A0DD29B1302E00A8EFD2 /* ListOfMoviesView.swift in Sources */,
 				3B57A0CC29B12F4000A8EFD2 /* ViewController.swift in Sources */,
 				3B57A0E129B1304800A8EFD2 /* ListOfMoviesInteractor.swift in Sources */,
