@@ -41,8 +41,8 @@ De esta manera el código está más desacoplado y se puede trabajar con 'Abstra
 > Nota: VIEW
 . Tiene una dependencia en el inicializafdor donde se le tiene que inyectar una instancia del Presenter.
 
-## Inyeccion de Dependencias
+## Inyección de Dependencias
  - Algunos componentes de VIPER se comunican mediante protocolos.
- - Es importante trabajar en 'Abstracciones' con protocolos, de esta manera, cualquier tipo que conforme el protocolo se puede sustituir e inyectar en el codigo.
-- Al crear las 'Abstracciones' se puede intercambiar los tipos, donde cada tipo puede contener una implementacion diferente.
-- Es muy util para realizar Test Unitarios o Test de Integracion.
+ - Es importante trabajar en 'Abstracciones' con protocolos, de esta manera, cualquier tipo que conforme el protocolo se puede sustituir e inyectar en el código.
+- Al crear las 'Abstracciones' se puede intercambiar los tipos, donde cada tipo puede contener una implementación diferente.
+- Es muy útil para realizar Test Unitarios o Test de Integración.

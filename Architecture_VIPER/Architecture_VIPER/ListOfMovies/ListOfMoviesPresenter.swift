@@ -7,18 +7,24 @@
 
 import Foundation
 
+protocol ListOfMoviesPresentable: AnyObject {
+//    Creamos una abstraccion: dos metodos y una propiedad que necesita la view
+    var ui: ListOfMoviesUI? { get }
+    var moviewCelViewModels: [MovieCellViewModel] { get }
+    func onViewAppear()
+}
 //para pasar los datos a la View
 protocol ListOfMoviesUI: AnyObject {
     func update(movies: [MovieCellViewModel])
 }
-
-class ListOfMoviesPresenter {
+//hacemos que conforme el protocolo
+class ListOfMoviesPresenter: ListOfMoviesPresentable {
 //    referencia del protocolo usando el 'weak' para evitar Retail Circle
-    var ui: ListOfMoviesUI?
+    weak var ui: ListOfMoviesUI?
     
 //    referencia del Interactor
 //    private let listOfMoviesIteractor: ListOfMoviesInteractor
-//    referencia del protocolo del Interactor- Aquí se esta haciendo la Abstracción
+//    referencia del protocolo del Interactor- Aquí se está haciendo la Abstracción
     private let listOfMoviesIteractor: ListOfMoviesInteractable
 //    guardamos la referencia del array del Json
     var moviewCelViewModels: [MovieCellViewModel] = []

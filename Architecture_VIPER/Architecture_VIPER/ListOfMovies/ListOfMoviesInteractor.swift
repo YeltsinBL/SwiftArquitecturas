@@ -40,10 +40,10 @@ class ListOfMoviesInteractor: ListOfMoviesInteractable {
     }
 }
 
-// en vez de realizar una peticion HTTP, retornara un array de modelos inventados
+// en vez de realizar una petición HTTP, retornará un array de modelos inventados
 class ListOfMoviesInteractorMock: ListOfMoviesInteractable {
     func getListOfMovies() async -> PopularMovieResponseEntity {
-//        implementamos el contenido que coontorme el modelo Entity
+//        implementamos el contenido que conforme el modelo Entity
         return PopularMovieResponseEntity(results: [
             .init(id: 0, title: "SwiftUI", overview: "Apremder Swift", imageURL: "", votes: 10),
             .init(id: 1, title: "SwiftUI", overview: "Apremder SwiftUI", imageURL: "", votes: 10),

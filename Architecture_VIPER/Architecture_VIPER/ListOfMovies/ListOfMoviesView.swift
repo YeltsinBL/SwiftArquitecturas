@@ -20,10 +20,11 @@ class ListOfMoviesView: UIViewController {
     }()
     
 //    hacemos una referencia al Presenter
-    private let presenter: ListOfMoviesPresenter
-    
+//    private let presenter: ListOfMoviesPresenter
+//    usamos el protocolo en vez de usar una implementación especifica del presenter
+    private let presenter: ListOfMoviesPresentable
 //    inyectamos el valor instanciado
-    init(presenter: ListOfMoviesPresenter) {
+    init(presenter: ListOfMoviesPresentable) {
         self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
     }
