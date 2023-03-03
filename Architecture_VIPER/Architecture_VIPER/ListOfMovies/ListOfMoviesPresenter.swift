@@ -13,18 +13,20 @@ protocol ListOfMoviesUI: AnyObject {
 }
 
 class ListOfMoviesPresenter {
-//    referencia del protocolo
+//    referencia del protocolo usando el 'weak' para evitar Retail Circle
     var ui: ListOfMoviesUI?
     
 //    referencia del Interactor
-    private let listOfMoviesIteractor: ListOfMoviesInteractor
+//    private let listOfMoviesIteractor: ListOfMoviesInteractor
+//    referencia del protocolo del Interactor- Aquí se esta haciendo la Abstracción
+    private let listOfMoviesIteractor: ListOfMoviesInteractable
 //    guardamos la referencia del array del Json
     var moviewCelViewModels: [MovieCellViewModel] = []
     
 //    creamos la referencia del Mapper, lo inyectamos al Presenter e instanciamos
     private let movieCellMapper: MovieCellMapper
     
-    init(listOfMoviesIteractor: ListOfMoviesInteractor, movieCellMapper: MovieCellMapper = MovieCellMapper()) {
+    init(listOfMoviesIteractor: ListOfMoviesInteractable, movieCellMapper: MovieCellMapper = MovieCellMapper()) {
         self.listOfMoviesIteractor = listOfMoviesIteractor
         self.movieCellMapper = movieCellMapper
     }
