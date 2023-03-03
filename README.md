@@ -37,3 +37,6 @@ De esta manera el código está más desacoplado y se puede trabajar con 'Abstra
 > Nota: PRESENTER
 . Las referencias del Presenter con el Interactor y Router son fuertes, y con la View es debil.
 . No tiene la responsabilidad que saber cómo se pasa del Entity al ViewModel.
+
+> Nota: VIEW
+. Tiene una dependencia en el inicializafdor donde se le tiene que inyectar una instancia del Presenter

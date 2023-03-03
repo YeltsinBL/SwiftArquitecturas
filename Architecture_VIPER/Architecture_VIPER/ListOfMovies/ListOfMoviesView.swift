@@ -20,9 +20,11 @@ class ListOfMoviesView: UIViewController {
     }()
     
 //    hacemos una referencia al Presenter
-    var presenter: ListOfMoviesPresenter?
+    private let presenter: ListOfMoviesPresenter
     
-    init() {
+//    inyectamos el valor instanciado
+    init(presenter: ListOfMoviesPresenter) {
+        self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -36,7 +38,7 @@ class ListOfMoviesView: UIViewController {
         view.backgroundColor = .blue
         setupTableView()
 //        llamamos al método del presenter
-        presenter?.onViewAppear()
+        presenter.onViewAppear()
     }
     
     private func setupTableView() {
@@ -57,13 +59,13 @@ class ListOfMoviesView: UIViewController {
 
 extension ListOfMoviesView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        presenter!.moviewCelViewModels.count
+        presenter.moviewCelViewModels.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCellView", for: indexPath) as! MovieCellView
         
-        let model = presenter!.moviewCelViewModels[indexPath.row]
+        let model = presenter.moviewCelViewModels[indexPath.row]
         cell.configure(model: model)
         return cell
         
