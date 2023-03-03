@@ -32,5 +32,8 @@ Obtener conocimiento de las Arquitecturas más conocidas y utilizadas en Swift.
 -- Las struct para transformar el Json al modelo son las entities.
 
 > Nota: algunos de los componentes (Presenter, Interactor, Router) se pueden comunicar entre ellos usando protocolos a través de interfaces. 
-Las referencias del Presenter al Interactor y Router son fuertes, y a la View es debil.
 De esta manera el código está más desacoplado y se puede trabajar con 'Abstracciones' en vez de 'Implementaciones completas' haciendo más fácil testear el código.
+
+> Nota: PRESENTER
+. Las referencias del Presenter con el Interactor y Router son fuertes, y con la View es debil.
+. No tiene la responsabilidad que saber cómo se pasa del Entity al ViewModel.

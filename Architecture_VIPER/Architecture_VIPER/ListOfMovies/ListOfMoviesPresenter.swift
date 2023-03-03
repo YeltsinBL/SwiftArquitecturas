@@ -21,8 +21,12 @@ class ListOfMoviesPresenter {
 //    guardamos la referencia del array del Json
     var moviewCelViewModels: [MovieCellViewModel] = []
     
-    init(listOfMoviesIteractor: ListOfMoviesInteractor) {
+//    creamos la referencia del Mapper, lo inyectamos al Presenter e instanciamos
+    private let movieCellMapper: MovieCellMapper
+    
+    init(listOfMoviesIteractor: ListOfMoviesInteractor, movieCellMapper: MovieCellMapper = MovieCellMapper()) {
         self.listOfMoviesIteractor = listOfMoviesIteractor
+        self.movieCellMapper = movieCellMapper
     }
     
 //    llamamos al Interactor y lo pasamos a la View con el patron Delegation
@@ -31,10 +35,7 @@ class ListOfMoviesPresenter {
 //            obtenemos los datos
             let models = await listOfMoviesIteractor.getListOfMovies().results
 //            transformamos de Entity a ViewModel mapeándolo
-            moviewCelViewModels = models.map { entity in
-                MovieCellViewModel(title: entity.title, overview: entity.overview, imageURL: entity
-                    .imageURL)
-            }
+            moviewCelViewModels = models.map(movieCellMapper.map(entity:))
 //            lo pasamos a View mediante un protocolo
             ui?.update(movies: moviewCelViewModels)
         }
