@@ -7,10 +7,24 @@
 
 import Foundation
 
-class DetailPresenter {
+//pasamos el ViewModel a la View
+protocol DetailPresenteUI: AnyObject {
+    func updateUI(viewModel: DetailMovieViewModel)
+}
+
+//protocolo para la Abstracción desde la View
+protocol DetailPresentable: AnyObject {
+    var ui: DetailPresenteUI? { get }
+    var movieId: String { get }
+    func onViewAppear()
+}
+
+class DetailPresenter: DetailPresentable {
+    
+    weak var ui: DetailPresenteUI?
     
 //    referencias
-    private let movieId: String
+    let movieId: String
     private let interactor: DetailInteractable
     private let mapper: MapperDatailMovieViewModel
     
@@ -26,7 +40,12 @@ class DetailPresenter {
             let model = await interactor.getDatailMovie(withId: movieId)
 //            pasamos de Entity a ViewModel
             let viewModel = mapper.map(entity: model)
-            print("Detalle: \(viewModel)")
+//            pasamos el ViewModel a la UI
+            await MainActor.run {
+                self.ui?.updateUI(viewModel:viewModel)
+                print("Detalle: \(viewModel)")
+                
+            }
         }
     }
     
