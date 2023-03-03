@@ -9,6 +9,10 @@ import Foundation
 import UIKit
 
 class ListOfMoviesRouter {
+//    referencias
+    var detailRouting: DetailRouting?
+    var listOfMoviesView: ListOfMoviesView?
+    
 //    llamamos a este método desde el punto de entrada de la aplicación 'SceneDelegate'
     func showListOfMovies(window: UIWindow?) {
 /*        presentamos el primero módulo de VIPER sin el storyboard */
@@ -22,15 +26,22 @@ class ListOfMoviesRouter {
         let presenter = ListOfMoviesPresenter(listOfMoviesIteractor: interactor)//        unimos el Presenter con la View
 
 //        instanciamos la View
-        let view = ListOfMoviesView(presenter: presenter)
+        listOfMoviesView = ListOfMoviesView(presenter: presenter)
 //        la 'ui' es la view donde se va a enviar los datos recibidos del Interactor para mostrarlo en pantalla
-        presenter.ui = view
+        presenter.ui = listOfMoviesView
         
 //        a la view le pasamos el presenter que necesita para lanzar la accion
 //        view.presenter = presenter
         
 //        mostramos en pantalla
-        window?.rootViewController = view
+        window?.rootViewController = listOfMoviesView
         window?.makeKeyAndVisible()
     }
+    
+//    método para mostrar el detalle
+    func showDetailMovie(withMovieId movieId: String) {
+        guard let fromViewController = listOfMoviesView else { return  }
+        detailRouting?.showDetail(fromViewController: fromViewController, withMovieId: movieId)
+    }
+    
 }
