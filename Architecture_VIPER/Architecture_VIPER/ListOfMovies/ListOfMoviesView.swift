@@ -53,7 +53,7 @@ class ListOfMoviesView: UIViewController {
         ])
         
         moviesTableView.dataSource = self
-        
+        moviesTableView.delegate = self
     }
     
 }
@@ -75,11 +75,19 @@ extension ListOfMoviesView: UITableViewDataSource {
     
 }
 
+//saber cuando se a pultado la lista para ver el detalle
+extension ListOfMoviesView: UITableViewDelegate {
+//    pasamos el index de la celda que se a pulsado
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter.onTapCell(atIndex: indexPath.row)
+    }
+}
+
 //conformar el protocolo del Presenter
 extension ListOfMoviesView: ListOfMoviesUI {
 //    pasamos los datos a la View
     func update(movies: [MovieCellViewModel]) {
-        print("Datos Recibidos \(movies)")
+//        print("Datos Recibidos \(movies)")
         DispatchQueue.main.async {
             self.moviesTableView.reloadData()
         }

@@ -8,7 +8,15 @@
 import Foundation
 import UIKit
 
-class ListOfMoviesRouter {
+protocol ListOfMoviesRouting: AnyObject {
+    var detailRouting: DetailRouting? { get }
+    var listOfMoviesView: ListOfMoviesView? { get }
+    
+    func showListOfMovies(window: UIWindow?)
+    func showDetailMovie(withMovieId movieId: String)
+}
+
+class ListOfMoviesRouter: ListOfMoviesRouting {
 //    referencias
     var detailRouting: DetailRouting?
     var listOfMoviesView: ListOfMoviesView?
@@ -16,14 +24,15 @@ class ListOfMoviesRouter {
 //    llamamos a este método desde el punto de entrada de la aplicación 'SceneDelegate'
     func showListOfMovies(window: UIWindow?) {
 /*        presentamos el primero módulo de VIPER sin el storyboard */
-        
+        self.detailRouting = DetailRouter()
         let apiKeys = ApiKeys()
         
         let interactor = ListOfMoviesInteractor(apiKeys: apiKeys)
 //        creamos una instancia del InteractoMock, que llenara de datos sin hacer petición HTTP
 //        let interactor = ListOfMoviesInteractorMock()
 //        instancia del Presenter y le inyectamos la depencia del Interactor
-        let presenter = ListOfMoviesPresenter(listOfMoviesIteractor: interactor)//        unimos el Presenter con la View
+        let presenter = ListOfMoviesPresenter(listOfMoviesIteractor: interactor,
+                                              router: self)
 
 //        instanciamos la View
         listOfMoviesView = ListOfMoviesView(presenter: presenter)
