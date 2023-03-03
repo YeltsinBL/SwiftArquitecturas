@@ -11,5 +11,5 @@ import Foundation
 struct MovieCellViewModel {
     var title: String
     var overview: String
-    var imageURL: String
+    var imageURL: URL?
 }

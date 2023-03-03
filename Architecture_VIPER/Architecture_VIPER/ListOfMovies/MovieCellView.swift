@@ -70,7 +70,7 @@ class MovieCellView: UITableViewCell {
     func configure(model: MovieCellViewModel){
         movieName.text = model.title
         movieDescription.text = model.overview
-        movieImageView.kf.setImage(with: URL(string: "https://image.tmdb.org/t/p/w200" + model.imageURL))
+        movieImageView.kf.setImage(with: model.imageURL)
         
     }
     
