@@ -46,3 +46,9 @@ De esta manera el código está más desacoplado y se puede trabajar con 'Abstra
  - Es importante trabajar en 'Abstracciones' con protocolos, de esta manera, cualquier tipo que conforme el protocolo se puede sustituir e inyectar en el código.
 - Al crear las 'Abstracciones' se puede intercambiar los tipos, donde cada tipo puede contener una implementación diferente.
 - Es muy útil para realizar Test Unitarios o Test de Integración.
+
+## Navegar a otra View
+- `View`: Se usa el Delegate para poder saber que celda se ha presionado.
+-- Este patrón se hace en una extensión de la 'View' para obtener la posición de la celda.
+- `Presenter`: recibe la posición de la celda y obtener si 'Id' para pasarlo al 'Router'.
+- `Router`: se conecta con el 'Router del otro módulo' para enviarle la referencia del 'Controller' y el 'Id'.
