@@ -28,6 +28,7 @@ class LoginView: UIViewController {
        let textField = UITextField()
         textField.placeholder = "Ingresa tu password"
         textField.borderStyle = .roundedRect
+        textField.isSecureTextEntry = true
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
@@ -48,13 +49,23 @@ class LoginView: UIViewController {
         
     }()
     
+    private let errorLabel: UILabel = {
+       var label = UILabel()
+        label.text = ""
+        label.numberOfLines = 0
+        label.textColor = .red
+        label.font = .systemFont(ofSize: 20, weight: .regular, width: .condensed)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 //        primero debe hacer el Binding y luego la vista
         createBindingViewWithViewModel()
         
-        [emailTextFiel, passwordTextFiel, loginButton].forEach(view.addSubview)
+        [emailTextFiel, passwordTextFiel, loginButton, errorLabel]
+            .forEach(view.addSubview)
         
         NSLayoutConstraint.activate([
             
@@ -69,7 +80,11 @@ class LoginView: UIViewController {
             passwordTextFiel.bottomAnchor.constraint(equalTo: loginButton.topAnchor, constant: -20),
             
             loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            loginButton.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            loginButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            
+            errorLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            errorLabel.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant:  20)
+            
         ])
     }
     
@@ -90,6 +105,20 @@ class LoginView: UIViewController {
             .assign(to: \LoginViewModel.password,
                     on: loginViewModel)
             .store(in: &cancellable)
+//        Bindeamos la propiedad del ViewModel con el Button
+        loginViewModel.$isEnabled
+//        nos conectamos a la propiedad 'isEnabled' del Button
+            .assign(to: \.isEnabled, on: loginButton)
+            .store(in: &cancellable)
+//        Bindeamos para mostrar el loading icon del Button
+        loginViewModel.$showLoading
+            .assign(to: \.configuration!.showsActivityIndicator, on: loginButton)
+            .store(in: &cancellable)
+//        actualizamos el texto del Label
+        loginViewModel.$errorMessage
+            .assign(to: \UILabel.text!, on: errorLabel)
+            .store(in: &cancellable)
+        
     }
     
 
