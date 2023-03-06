@@ -119,6 +119,13 @@ class LoginView: UIViewController {
             .assign(to: \UILabel.text!, on: errorLabel)
             .store(in: &cancellable)
         
+//        usamos la propiedad del ViewModel para poder mostrar el HomeView
+        loginViewModel.$userModel.sink { [weak self] _ in
+            print("Navego hacia el HomeViewcontroller")
+            let homeView = HomeView()
+            self?.present(homeView, animated: true)
+        }.store(in: &cancellable)
+        
     }
     
 

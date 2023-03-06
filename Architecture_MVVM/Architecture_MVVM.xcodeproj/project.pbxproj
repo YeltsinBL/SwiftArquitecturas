@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B7E70C129B65F1700C0882D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7E70C029B65F1700C0882D /* HomeView.swift */; };
 		3BA0BA7929B2D4B700466934 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA0BA7829B2D4B700466934 /* AppDelegate.swift */; };
 		3BA0BA7B29B2D4B700466934 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA0BA7A29B2D4B700466934 /* SceneDelegate.swift */; };
 		3BA0BA7D29B2D4B700466934 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA0BA7C29B2D4B700466934 /* LoginView.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B7E70C029B65F1700C0882D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		3BA0BA7529B2D4B700466934 /* Architecture_MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Architecture_MVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BA0BA7829B2D4B700466934 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BA0BA7A29B2D4B700466934 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +45,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B7E70BF29B65F0D00C0882D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				3B7E70C029B65F1700C0882D /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		3BA0BA6C29B2D4B700466934 = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +74,7 @@
 			children = (
 				3BA0BA7829B2D4B700466934 /* AppDelegate.swift */,
 				3BA0BA7A29B2D4B700466934 /* SceneDelegate.swift */,
+				3B7E70BF29B65F0D00C0882D /* Home */,
 				3BA0BA8C29B2D54400466934 /* Login */,
 				3BA0BA7E29B2D4B700466934 /* Main.storyboard */,
 				3BA0BA8129B2D4B900466934 /* Assets.xcassets */,
@@ -164,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BA0BA8E29B2D57300466934 /* LoginViewModel.swift in Sources */,
+				3B7E70C129B65F1700C0882D /* HomeView.swift in Sources */,
 				3BA0BA7D29B2D4B700466934 /* LoginView.swift in Sources */,
 				3BA0BA9329B2D7A800466934 /* User.swift in Sources */,
 				3BA0BA7929B2D4B700466934 /* AppDelegate.swift in Sources */,

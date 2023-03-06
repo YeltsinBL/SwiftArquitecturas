@@ -15,6 +15,7 @@ class LoginViewModel {
     @Published var isEnabled = false
     @Published var showLoading = false
     @Published var errorMessage = ""
+    @Published var userModel: User?
     
 //    propiedad para poder guardar la referencia cuando nos suscribimos
     var cancellable = Set<AnyCancellable>()
@@ -70,8 +71,8 @@ class LoginViewModel {
         Task {
 //            usamos el método que puede lanzar errores
             do{
-                let userModel = try await apiClient.login(withEmail: email, password: password)
-                print(userModel)
+                userModel = try await apiClient.login(withEmail: email, password: password)
+                print(userModel ?? "Sin valor")
             } catch let error as BackendError {
                 errorMessage = error.rawValue
                 print(error.localizedDescription)
