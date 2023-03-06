@@ -24,6 +24,7 @@ class LoginViewModel {
 //            usamos el método que puede lanzar errores
             do{
                 let userModel = try await apiClient.login(withEmail: email, password: password)
+                print(userModel)
             } catch let error as BackendError {
                 print(error.localizedDescription)
             }

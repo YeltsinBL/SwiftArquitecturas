@@ -23,7 +23,7 @@ final class APIClient {
 
 //esta parte debería de estar en el Backend
 func simulateBackendLogic(email: String, password: String) throws -> User {
-    guard email == "exercisewithMVVM" else {
+    guard email == "exercisewithmvvm" else {
         print("El usuario no es exercisewithMVVM")
         throw BackendError.invalidEmail
     }
