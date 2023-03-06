@@ -6,11 +6,14 @@
 //
 
 import UIKit
+import Combine
 
 class LoginView: UIViewController {
 
 //    referencia
     private let loginViewModel = LoginViewModel(apiClient: APIClient())
+//    propiedad para usar con el Combine
+    var cancellable = Set<AnyCancellable>()
     
 //    UI
     private let emailTextFiel: UITextField = {
@@ -48,6 +51,8 @@ class LoginView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        primero debe hacer el Binding y luego la vista
+        createBindingViewWithViewModel()
         
         [emailTextFiel, passwordTextFiel, loginButton].forEach(view.addSubview)
         
@@ -73,6 +78,33 @@ class LoginView: UIViewController {
                                  password: passwordTextFiel.text?.lowercased() ?? "")
     }
 
+//    creación de los Binding para la conexión con las propiedad desl ViewModel
+    func createBindingViewWithViewModel() {
+//        siempre que se use '.assign', se debe usar 'store'
+        emailTextFiel.textPublisher
+//              especificamos el Binding con el ViewModel y su propiedad
+            .assign(to: \LoginViewModel.email,
+                    on: loginViewModel) //con su instancia
+            .store(in: &cancellable) //guardamos siempre la referencia en un tipo AnyCancellable
+        passwordTextFiel.textPublisher
+            .assign(to: \LoginViewModel.password,
+                    on: loginViewModel)
+            .store(in: &cancellable)
+    }
+    
 
 }
 
+//para detectar los cambios en los textFields
+extension UITextField {
+    var textPublisher: AnyPublisher<String, Never> {
+//        detectamos cuando se esta añadiendo nuevo texto en el TextField
+        return NotificationCenter.default.publisher(for: UITextField.textDidChangeNotification, object: self)
+            .map { notification in
+//                nos quedamos con el texto que llega de la notificación
+                return (notification.object as? UITextField)?.text ?? ""
+            }
+//              publica una notificación cada ves que se cambia el valor del UITextField
+            .eraseToAnyPublisher()
+    }
+}

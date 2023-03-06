@@ -27,3 +27,7 @@ La 'View' siempre escucha cambios que ocurran en el 'ViewModel'.
 - Se puede reutilizar el modelo en diferentes partes de la aplicación (código reutilizable).
 - Mejora la testeabilidad, se puede testear el 'ViewModel' sin preocuparse de la 'View' o 'Model'.
 - Buena escalabilidad del código, cuando agregamos nueva funcionalidad, se puede agregar nuevos componentes.
+
+> Nota: Cuando se trabaja con Combine, se debe de guardar la referencia en un tipo 'AnyCancellable'.
+Al usar '.assign' se debe de usar '.store' que espera como parametro la referencia de 'AnyCancellable'.
+
